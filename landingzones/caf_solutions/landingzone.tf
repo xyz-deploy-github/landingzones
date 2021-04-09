@@ -1,8 +1,7 @@
 module "caf" {
-  # source  = "aztfmod/caf/azurerm"
-  # version = "~>5.2.0"
-  source = "git::https://github.com/aztfmod/terraform-azurerm-caf.git?ref=5.3.0_preview"
-  
+  source  = "aztfmod/caf/azurerm"
+  version = "~>5.3.0"  
+
 
   azuread_api_permissions      = var.azuread_api_permissions
   azuread_apps                 = var.azuread_apps
