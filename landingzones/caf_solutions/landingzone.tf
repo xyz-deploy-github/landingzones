@@ -1,35 +1,36 @@
 module "caf" {
   source  = "aztfmod/caf/azurerm"
-  version = "~>5.3.0"  
+  version = "~>5.3.0"
 
 
-  azuread_api_permissions      = var.azuread_api_permissions
-  azuread_apps                 = var.azuread_apps
-  azuread_groups               = var.azuread_groups
-  azuread_roles                = var.azuread_roles
-  azuread_users                = var.azuread_users
-  current_landingzone_key      = var.landingzone.key
-  custom_role_definitions      = var.custom_role_definitions
-  diagnostics                  = local.diagnostics
-  event_hub_namespaces         = var.event_hub_namespaces
-  event_hubs                   = var.event_hubs
-  event_hub_auth_rules         = var.event_hub_auth_rules
-  event_hub_consumer_groups    = var.event_hub_consumer_groups
-  global_settings              = local.global_settings
-  keyvault_access_policies     = var.keyvault_access_policies
-  keyvault_certificate_issuers = var.keyvault_certificate_issuers
-  keyvaults                    = var.keyvaults
-  log_analytics                = var.log_analytics
-  logged_aad_app_objectId      = var.logged_aad_app_objectId
-  logged_user_objectId         = var.logged_user_objectId
-  managed_identities           = var.managed_identities
-  resource_groups              = var.resource_groups
-  role_mapping                 = var.role_mapping
-  storage_accounts             = var.storage_accounts
-  tags                         = local.tags
-  tenant_id                    = var.tenant_id
-  tfstates                     = local.tfstates
-  user_type                    = var.user_type
+  azuread_api_permissions        = var.azuread_api_permissions
+  azuread_apps                   = var.azuread_apps
+  azuread_groups                 = var.azuread_groups
+  azuread_roles                  = var.azuread_roles
+  azuread_users                  = var.azuread_users
+  current_landingzone_key        = var.landingzone.key
+  custom_role_definitions        = var.custom_role_definitions
+  diagnostics                    = local.diagnostics
+  event_hub_namespaces           = var.event_hub_namespaces
+  event_hubs                     = var.event_hubs
+  event_hub_auth_rules           = var.event_hub_auth_rules
+  event_hub_consumer_groups      = var.event_hub_consumer_groups
+  event_hub_namespace_auth_rules = var.event_hub_namespace_auth_rules
+  global_settings                = local.global_settings
+  keyvault_access_policies       = var.keyvault_access_policies
+  keyvault_certificate_issuers   = var.keyvault_certificate_issuers
+  keyvaults                      = var.keyvaults
+  log_analytics                  = var.log_analytics
+  logged_aad_app_objectId        = var.logged_aad_app_objectId
+  logged_user_objectId           = var.logged_user_objectId
+  managed_identities             = var.managed_identities
+  resource_groups                = var.resource_groups
+  role_mapping                   = var.role_mapping
+  storage_accounts               = var.storage_accounts
+  tags                           = local.tags
+  tenant_id                      = var.tenant_id
+  tfstates                       = local.tfstates
+  user_type                      = var.user_type
 
 
   compute = {
