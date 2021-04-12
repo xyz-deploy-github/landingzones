@@ -12,6 +12,9 @@ module "caf" {
   custom_role_definitions      = var.custom_role_definitions
   diagnostics                  = local.diagnostics
   event_hub_namespaces         = var.event_hub_namespaces
+  event_hubs                   = var.event_hubs
+  event_hub_auth_rules         = var.event_hub_auth_rules
+  event_hub_consumer_groups    = var.event_hub_consumer_groups
   global_settings              = local.global_settings
   keyvault_access_policies     = var.keyvault_access_policies
   keyvault_certificate_issuers = var.keyvault_certificate_issuers
@@ -27,6 +30,7 @@ module "caf" {
   tenant_id                    = var.tenant_id
   tfstates                     = local.tfstates
   user_type                    = var.user_type
+
 
   compute = {
     aks_clusters               = var.aks_clusters

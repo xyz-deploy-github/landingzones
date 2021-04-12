@@ -270,3 +270,12 @@ variable keyvault_keys {
 variable load_balancers {
   default = {}
 }
+variable event_hubs {
+  default = {}
+}
+variable event_hub_auth_rules {
+  default = {}
+}
+variable event_hub_consumer_groups {
+  default = {}
+}
