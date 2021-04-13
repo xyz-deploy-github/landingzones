@@ -14,6 +14,11 @@ output global_settings {
   sensitive = true
 }
 
+output resource_groups {
+  value     = local.combined.resource_groups
+  sensitive = true
+}
+
 # ASE
 output app_service_environments {
   value     = local.combined.app_service_environments
@@ -31,6 +36,11 @@ output app_services {
 }
 
 # DB
+output mssql_managed_instances {
+  value     = local.combined.mssql_managed_instances
+  sensitive = true
+}
+
 output mssql_servers {
   value     = local.combined.mssql_servers
   sensitive = true

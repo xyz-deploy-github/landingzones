@@ -150,9 +150,11 @@ locals {
     application_gateways             = merge(local.remote.application_gateways, tomap({ (var.landingzone.key) = module.caf.application_gateways }))
     managed_identities               = merge(local.remote.managed_identities, tomap({ (var.landingzone.key) = module.caf.managed_identities }))
     mssql_elastic_pools              = merge(local.remote.mssql_elastic_pools, tomap({ (var.landingzone.key) = module.caf.mssql_elastic_pools }))
+    mssql_managed_instances          = merge(local.remote.mssql_managed_instances, tomap({ (var.landingzone.key) = module.caf.mssql_managed_instances }))
     mssql_servers                    = merge(local.remote.mssql_servers, tomap({ (var.landingzone.key) = module.caf.mssql_servers }))
     private_dns                      = merge(local.remote.private_dns, tomap({ (var.landingzone.key) = module.caf.private_dns }))
     public_ip_addresses              = merge(local.remote.public_ip_addresses, tomap({ (var.landingzone.key) = module.caf.public_ip_addresses }))
+    resource_groups                  = merge(local.remote.resource_groups, tomap({ (var.landingzone.key) = module.caf.resource_groups }))
     vnets                            = merge(local.remote.vnets, tomap({ (var.landingzone.key) = module.caf.vnets }))
   }
 }
