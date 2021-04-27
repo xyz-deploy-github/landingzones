@@ -59,6 +59,9 @@ locals {
     application_gateway_applications = {
       for key, value in try(var.landingzone.tfstates, {}) : key => merge(try(data.terraform_remote_state.remote[key].outputs.application_gateway_applications[key], {}))
     }
+    application_gateway_waf_policies = {
+      for key, value in try(var.landingzone.tfstates, {}) : key => merge(try(data.terraform_remote_state.remote[key].outputs.application_gateway_waf_policies[key], {}))
+    }
     application_gateways = {
       for key, value in try(var.landingzone.tfstates, {}) : key => merge(try(data.terraform_remote_state.remote[key].outputs.application_gateways[key], {}))
     }
@@ -147,6 +150,7 @@ locals {
     app_service_plans                = merge(local.remote.app_service_plans, tomap({ (var.landingzone.key) = module.caf.app_service_plans }))
     app_services                     = merge(local.remote.app_services, tomap({ (var.landingzone.key) = module.caf.app_services }))
     application_gateway_applications = merge(local.remote.application_gateway_applications, tomap({ (var.landingzone.key) = module.caf.application_gateway_applications }))
+    application_gateway_waf_policies = merge(local.remote.application_gateway_waf_policies, tomap({ (var.landingzone.key) = module.caf.application_gateway_waf_policies }))
     application_gateways             = merge(local.remote.application_gateways, tomap({ (var.landingzone.key) = module.caf.application_gateways }))
     managed_identities               = merge(local.remote.managed_identities, tomap({ (var.landingzone.key) = module.caf.managed_identities }))
     mssql_elastic_pools              = merge(local.remote.mssql_elastic_pools, tomap({ (var.landingzone.key) = module.caf.mssql_elastic_pools }))

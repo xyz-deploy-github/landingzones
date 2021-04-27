@@ -77,6 +77,11 @@ output application_gateway_applications {
   sensitive = true
 }
 
+output application_gateway_waf_policies {
+  value     = local.combined.application_gateway_waf_policies
+  sensitive = true
+}
+
 # DNS
 output private_dns {
   value     = local.combined.private_dns
