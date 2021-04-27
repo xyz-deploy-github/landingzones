@@ -95,6 +95,7 @@ module "caf" {
     app_service_plans                = local.remote.app_service_plans
     app_services                     = local.remote.app_services
     application_gateway_applications = local.remote.application_gateway_applications
+    application_gateway_waf_policies = var.application_gateway_waf_policies
     application_gateways             = local.remote.application_gateways
     availability_sets                = local.remote.availability_sets
     azuread_applications             = local.remote.azuread_applications
