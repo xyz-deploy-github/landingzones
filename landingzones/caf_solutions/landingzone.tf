@@ -40,6 +40,7 @@ module "caf" {
     bastion_hosts              = var.bastion_hosts
     proximity_placement_groups = var.proximity_placement_groups
     virtual_machines           = var.virtual_machines
+    virtual_machine_scale_sets = var.virtual_machine_scale_sets
   }
 
   database = {
