@@ -85,7 +85,7 @@ variable app_services {
   default = {}
 }
 variable diagnostics_definition {
-  default = null
+  default = {}
 }
 variable network_security_group_definition {
   default = {}
