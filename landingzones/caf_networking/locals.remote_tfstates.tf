@@ -77,15 +77,13 @@ locals {
     }
   }
 
-
   combined = {
-    vnets                            = merge(local.remote.vnets, map(var.landingzone.key, module.networking.vnets))
-    azurerm_firewalls                = merge(local.remote.azurerm_firewalls, map(var.landingzone.key, module.networking.azurerm_firewalls))
-    public_ip_addresses              = merge(local.remote.public_ip_addresses, map(var.landingzone.key, module.networking.public_ip_addresses))
-    virtual_wans                     = merge(local.remote.virtual_wans, map(var.landingzone.key, module.networking.virtual_wans))
-    private_dns                      = merge(local.remote.private_dns, map(var.landingzone.key, module.networking.private_dns))
-    application_gateways             = merge(local.remote.application_gateways, map(var.landingzone.key, module.networking.application_gateways))
-    application_gateway_applications = merge(local.remote.application_gateway_applications, map(var.landingzone.key, module.networking.application_gateway_applications))
+    application_gateway_applications = merge(local.remote.application_gateway_applications, tomap({ (var.landingzone.key) = module.networking.application_gateway_applications }))
+    application_gateways             = merge(local.remote.application_gateways, tomap({ (var.landingzone.key) = module.networking.application_gateways }))
+    private_dns                      = merge(local.remote.private_dns, tomap({ (var.landingzone.key) = module.networking.private_dns }))
+    public_ip_addresses              = merge(local.remote.public_ip_addresses, tomap({ (var.landingzone.key) = module.networking.public_ip_addresses }))
+    vnets                            = merge(local.remote.vnets, tomap({ (var.landingzone.key) = module.networking.vnets }))
+    azurerm_firewalls                = merge(local.remote.azurerm_firewalls, tomap({ (var.landingzone.key) = module.networking.azurerm_firewalls}))
+    virtual_wans                     = merge(local.remote.virtual_wans, tomap({ (var.landingzone.key) = module.networking.virtual_wans}))
   }
-
 }
