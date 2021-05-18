@@ -1,7 +1,7 @@
 module "caf" {
-  source  = "aztfmod/caf/azurerm"
-  version = "~>5.3.0"
-  
+  # source  = "aztfmod/caf/azurerm"
+  # version = "~>5.3.0"
+  source = "/tf/caf/aztfmod"
 
   azuread_api_permissions        = var.azuread_api_permissions
   azuread_apps                   = var.azuread_apps
@@ -10,7 +10,6 @@ module "caf" {
   azuread_users                  = var.azuread_users
   current_landingzone_key        = var.landingzone.key
   custom_role_definitions        = var.custom_role_definitions
-  # diagnostics                    = local.diagnostics
   event_hub_namespaces           = var.event_hub_namespaces
   event_hubs                     = var.event_hubs
   event_hub_auth_rules           = var.event_hub_auth_rules

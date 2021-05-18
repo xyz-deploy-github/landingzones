@@ -29,7 +29,8 @@ variable logged_aad_app_objectId {
   default = null
 }
 variable tags {
-  default = null
+  type    = map
+  default = {}
 }
 variable app_service_environments {
   default = {}
@@ -98,5 +99,14 @@ variable azuread_apps {
   default = {}
 }
 variable dynamic_keyvault_secrets {
+  default = {}
+}
+variable diagnostic_event_hub_namespaces {
+  default = {}
+}
+variable diagnostic_log_analytics {
+  default = {}
+}
+variable diagnostics_destinations {
   default = {}
 }

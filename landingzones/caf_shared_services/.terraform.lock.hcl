@@ -2,10 +2,10 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/aztfmod/azurecaf" {
-  version     = "1.2.2"
+  version     = "1.2.3"
   constraints = "~> 1.2.0"
   hashes = [
-    "h1:5GMOMtQg1/i6yigQ++Nol/lno2D67D5LhO3/VLPMq9A=",
+    "h1:pltbg/koD5dtpWa+VilS3kAOmLMNrC1NkGk2/FfztiM=",
   ]
 }
 
@@ -57,9 +57,9 @@ provider "registry.terraform.io/hashicorp/template" {
 }
 
 provider "registry.terraform.io/hashicorp/time" {
-  version = "0.7.0"
+  version = "0.7.1"
   hashes = [
-    "h1:1VPBq+jeoCf0wVCxnzK6BNnOmNbXf3fRnDmS43Jw7Oo=",
+    "h1:r4Pw0C8s7Z/d//qJlJHrHdtqdd8vFm85hbxEwZYshrI=",
   ]
 }
 

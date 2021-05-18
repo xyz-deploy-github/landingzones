@@ -47,7 +47,7 @@ variable tags {
   default = {}
 }
 variable diagnostics_definition {
-  default = null
+  default = {}
 }
 variable resource_groups {
   default = {}
@@ -71,7 +71,7 @@ variable azurerm_firewalls {
   default = {}
 }
 variable network_security_group_definition {
-  default = null
+  default = {}
 }
 variable route_tables {
   default = {}
