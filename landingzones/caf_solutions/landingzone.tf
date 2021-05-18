@@ -1,7 +1,7 @@
 module "caf" {
-  # source  = "aztfmod/caf/azurerm"
-  # version = "~>5.3.0"
-  source = "/tf/caf/aztfmod"
+  source  = "aztfmod/caf/azurerm"
+  version = "~>5.3.0"
+  
 
   azuread_api_permissions        = var.azuread_api_permissions
   azuread_apps                   = var.azuread_apps
