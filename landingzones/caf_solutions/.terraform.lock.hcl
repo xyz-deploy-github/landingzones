@@ -92,3 +92,10 @@ provider "registry.terraform.io/hashicorp/tls" {
     "h1:BRvNNW/32RAFXRcEAovtJWVbFt8zesIKkQm2N0GBCn8=",
   ]
 }
+
+provider "registry.terraform.io/microsoft/azuredevops" {
+  version = "0.1.4"
+  hashes = [
+    "h1:spXx1Oh5na60KFSDObe1UQZkAsgfpy5xeNWAiUA1vxY=",
+  ]
+}
