@@ -50,13 +50,6 @@ resource "random_string" "prefix" {
   number  = false
 }
 
-# resource "random_string" "alpha1" {
-#   length  = 1
-#   special = false
-#   upper   = false
-#   number  = false
-# }
-
 data "azurerm_client_config" "current" {}
 
 locals {
@@ -65,16 +58,11 @@ locals {
   }
   tags = merge(local.landingzone_tag, { "level" = var.landingzone.level }, { "environment" = var.environment }, { "rover_version" = var.rover_version }, var.tags)
 
-  # prefix = var.prefix == null ? random_string.prefix.result : var.prefix
-
   global_settings = {
     default_region     = var.default_region
     environment        = var.environment
     inherit_tags       = var.inherit_tags
     passthrough        = var.passthrough
-    # prefix             = local.prefix
-    # prefix_start_alpha = local.prefix == "" ? "" : "${random_string.alpha1.result}${local.prefix}"
-    # prefix_with_hyphen = local.prefix == "" ? "" : "${local.prefix}-"
     prefix             = var.prefix
     prefixes           = var.prefix == "" ? null : [try(random_string.prefix.0.result, var.prefix)]
     prefix_with_hyphen = var.prefix == "" ? null : format("%s", try(random_string.prefix.0.result, var.prefix))
