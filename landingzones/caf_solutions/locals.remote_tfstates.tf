@@ -47,7 +47,7 @@ locals {
         try(var.diagnostics_destinations.event_hub_namespaces, {})
       )
       log_analytics = merge(
-        try(data.terraform_remote_state.remote[var.landingzone.global_settings_key].outputs.diagnostics.diagnostics.diagnostics_destinations.log_analytics, {}),
+        try(data.terraform_remote_state.remote[var.landingzone.global_settings_key].outputs.diagnostics.diagnostics_destinations.log_analytics, {}),
         try(var.diagnostics_destinations.log_analytics, {})
       )
       storage = merge(
@@ -58,8 +58,6 @@ locals {
     storage_accounts         = data.terraform_remote_state.remote[var.landingzone.global_settings_key].outputs.diagnostics.storage_accounts
     log_analytics            = data.terraform_remote_state.remote[var.landingzone.global_settings_key].outputs.diagnostics.log_analytics
     event_hub_namespaces     = data.terraform_remote_state.remote[var.landingzone.global_settings_key].outputs.diagnostics.event_hub_namespaces
-    
-
   }
 
   remote = {
